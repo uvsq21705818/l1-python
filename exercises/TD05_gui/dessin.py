@@ -21,12 +21,16 @@ def croix():
     canvas.create_line((x, y), (x+100, y+100), fill=color)
     canvas.create_line((x+100, y), (x, y+100), fill=color)
 
+def undo():
+    pass
 root = tk.Tk()
 root.title("Dessin")
 color = "blue"
+objets = []
 
 bouton_couleur = tk.Button(root, text="Choisir une couleur", bg="grey100", fg="blue", padx=20, font=("Times", "20"), command=couleur)
 bouton_cercle = tk.Button(root, text="Cercle", bg="grey100", fg="blue", padx=20, font=("Times", "20"), command=cercle)
+bouton_undo = tk.Button(root, text="Undo", bg="grey100", fg="blue", padx=20, font=("Times", "20"), command=undo)
 bouton_carre = tk.Button(root, text="Carré", bg="grey100", fg="blue", padx=20, font=("Times", "20"), command=carre)
 bouton_croix = tk.Button(root, text="Croix", bg="grey100", fg="blue", padx=20, font=("Times", "20"), command=croix)
 
@@ -36,6 +40,7 @@ bouton_couleur.grid(column=1, row=0)
 bouton_cercle.grid(column=0, row=1)
 bouton_carre.grid(column=0, row=2)
 bouton_croix.grid(column=0, row=3)
+bouton_undo.grid(column=2, row=0)
 
 canvas.grid(column=1, row=1, rowspan=3)
 
